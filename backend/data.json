@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "689c5bb84cdf31258f3938bb",
+    "businessName": "dfsdfs",
+    "ownerName": "asdfsa",
+    "aadhaar": "1fca128a90b7bb4ada3ed00ea82d62a9f9b86c62d0909bd222b6fa15385bcb46",
+    "pan": "1c3265f4b163466269ecf5e2996ffff0c8784bd18913b5b40d76ecf9e523963d",
+    "panVerified": true,
+    "aadhaarVerified": true,
+    "pinCode": "212405",
+    "city": "Allahabad",
+    "state": "Uttar Pradesh",
+    "createdAt": "2025-08-13T09:32:40.398Z",
+    "updatedAt": "2025-08-13T09:32:40.398Z",
+    "__v": 0
+  }
+]
