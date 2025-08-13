@@ -27,7 +27,7 @@ app.use(xss());
 
 // CORS
 app.use(cors({
-  origin: process.env.FRONTEND_ORIGIN || 'http://localhost:3000',
+  origin: process.env.FRONTEND_ORIGIN,
   credentials: true
 }));
 
@@ -41,9 +41,9 @@ const globalLimiter = rateLimit({
 app.use(globalLimiter);
 
 // CSRF protection - used cookie-based token for browser clients
-if (process.env.NODE_ENV === 'production') {
-  app.use(csurf({ cookie: true }));
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(csurf({ cookie: true }));
+// }
 
 // Routes
 

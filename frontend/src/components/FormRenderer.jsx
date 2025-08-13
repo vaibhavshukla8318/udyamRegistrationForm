@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import StepTracker from './StepTracker';
 import AadhaarOtpModal from './AadhaarOtpModal';
 import PanOtpModal from './PanOtpModal';
@@ -32,7 +32,7 @@ export default function FormRenderer() {
         if (postOffice) setForm(f => ({ ...f, city: postOffice.District, state: postOffice.State }));
       }
     } catch (err) {
-      // ignore lookup failure
+      // ignore
     }
   }
 
@@ -65,7 +65,8 @@ export default function FormRenderer() {
     try {
       const payload = { ...form, aadhaarVerified, panVerified };
       const res = await submitRegistration(payload);
-      alert('Registration saved, id: ' + res.data.id);
+      console.log(res);
+      alert('Registration Successful: ' + res.data.id);
 
       // Reset form, errors, verification, and step
       setForm({});
@@ -74,7 +75,7 @@ export default function FormRenderer() {
       setPanVerified(false);
       setCurrentStep(1);
     } catch (err) {
-      alert('Submit failed');
+      alert('Submit failed: ', err);
     } finally {
       setSubmitting(false);
     }

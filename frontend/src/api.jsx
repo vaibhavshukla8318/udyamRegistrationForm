@@ -1,9 +1,12 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: `${BASE_URL}/api`,
   withCredentials: true
 });
+
 
 export async function requestAadhaarOtp(aadhaar) {
   return api.post('/verify/aadhaar/request-otp', { aadhaar });
@@ -18,8 +21,8 @@ export async function confirmPanOtp(txId, otp) {
   return api.post('/verify/pan/confirm-otp', { txId, otp });
 }
 export async function postPinLookup(pin) {
-  // Example: PostPin provider request (serverless or direct)
-  // We'll call a public PostPin API here; production should call backend proxy to hide API keys
+  // PostPin provider request (serverless or direct)
+  // We'll call a public PostPin API here;
   return axios.get(`https://api.postalpincode.in/pincode/${pin}`);
 }
 export async function submitRegistration(data) {
